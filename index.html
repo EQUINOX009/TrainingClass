@@ -2,10 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cosmic Clicker</title>
 </head>
 <body>
-    
+
+    <div style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #1a1a2e; /* Deep space color */
+    ">
+        <button id="cosmic-button" style="
+            background-color: #e94560; /* Nebula Red */
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 24px;
+            font-family: 'Arial', sans-serif;
+            border-radius: 50px; /* Pill shape */
+            cursor: pointer;
+            box-shadow: 0 0 15px #e94560; /* Glowing effect */
+            transition: all 0.3s ease; /* Smooth transitions for hover effect */
+        "
+        onmouseover="
+            this.style.backgroundColor='#0f3460'; /* Galaxy Blue on hover */
+            this.style.transform='scale(1.1)'; /* Zoom in slightly */
+            this.style.boxShadow='0 0 25px #16213e, 0 0 5px #0f3460'; /* Change glow */
+            this.innerHTML='**CLICK**';
+        "
+        onmouseout="
+            this.style.backgroundColor='#e94560'; /* Revert to Nebula Red */
+            this.style.transform='scale(1.0)'; /* Revert size */
+            this.style.boxShadow='0 0 15px #e94560'; /* Revert glow */
+            this.innerHTML='Cosmic Button';
+        "
+        onclick="alert('You harnessed cosmic energy!');">
+            Cosmic Button
+        </button>
+    </div>
+
 </body>
 </html>
