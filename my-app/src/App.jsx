@@ -1,8 +1,10 @@
-import React from "react";
-import Post from "./components/post";
+
 
 function App() {
-  return< Post />;
+  return <h1>unused for now</h1>
+
+  //unused for now.
 }
+
 
 export default App;
