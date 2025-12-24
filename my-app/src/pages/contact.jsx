@@ -4,7 +4,16 @@ import "./Contact.css";
 function Contact() {
   const[name,setName]=useState('');
   const[email,setEmail]=useState('');
-  const[message,setMessage]=useState('');
+  const[message,setMessage]=useState('');false
+  const handleSubmit = (e) => {
+    e.preventDefault();e
+    const formValue= {
+      name: name,
+      email: email,
+      message: message,
+    }
+    console.log (formValue);
+  };
   return (
     <>
       {/* CONTACT FORM */}
