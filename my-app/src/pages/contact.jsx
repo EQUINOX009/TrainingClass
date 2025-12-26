@@ -1,52 +1,72 @@
 import { useState } from "react";
 import "./Contact.css";
+import CustomButton from "../components/CustomButton";
 
-function Contact() {
-  const[name,setName]=useState('');
-  const[email,setEmail]=useState('');
-  const[message,setMessage]=useState('');false
+
+const Contact = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
   const handleSubmit = (e) => {
-    e.preventDefault();e
-    const formValue= {
+    e.preventDefault();
+    const formvalue = {
       name: name,
       email: email,
-      message: message,
-    }
-    console.log (formValue);
+      message: message
+    };
+    console.log(formvalue);
+    alert(`Thank you ${formvalue.name}! \nMessage sent successfully.`);
   };
-  return (
-    <>
-      {/* CONTACT FORM */}
-      <div className="container">
-        <h1>Get in Touch</h1>
-        <form>
-           <div className="form-group">
-         <label htmlFor="name">Name</label>
-          <input type="text" onChange={(e)=>setName(e.target.value)} name="name" className="form-control"/>
-           </div>
-              <div className="form-group">
-              <label htmlFor="email">Email</label>
-               <input type="text" onChange={(e)=>setEmail(e.target.value)} name="email" className="form-control"/>
-              </div>
-              <div className="form-group">
-                 <label htmlFor="message">Message</label>
-                    <textarea onChange={(e)=>setMessage(e.target.value)} name="message" className="form-control"/>
-                      </div>
-                        <div className="form-group">
-                     <button type="submit">Submit</button>
-                  </div>
-                 </form>
 
-        {/* <form className="contact-form">
-          <input type="text" placeholder="First Name" required />
-          <input type="email" placeholder="Email" required />
-          <textarea placeholder="Message"></textarea>
-          <button type="submit">Submit</button>
-        </form> */}
+  return (
+    <div className="contact-container">
+      <h1>Contact Me</h1>
+      
+      <div className="contact-box">
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="name">Name:</label>
+            <input 
+              type="text" 
+              onChange={(e) => setName(e.target.value)} 
+              className="form-input" 
+              placeholder="Your Name"
+              required 
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="email">Email:</label>
+            <input 
+              type="email" 
+              onChange={(e) => setEmail(e.target.value)} 
+              className="form-input" 
+              placeholder="Your Email"
+              required 
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="message">Message:</label>
+            <textarea 
+              onChange={(e) => setMessage(e.target.value)} 
+              className="form-input" 
+              placeholder="Enter your message..."
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <div className="form-group">
+            <CustomButton type="PRIMARY" />
+            <CustomButton type="OUTLINE" />
+          </div>
+          {/* <button type="submit" className="submit-btn">Send Message</button> */}
+        </form>
       </div>
-    </>
+    </div>
   );
-}
+};
 
 export default Contact;
-w
+
